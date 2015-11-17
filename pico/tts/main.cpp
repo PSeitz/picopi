@@ -30,7 +30,7 @@ static FILE *outfp = stdout;
 tts_callback_status synth_done(void *& userdata, uint32_t sample_rate,
         tts_audio_format audio_format, int channels, int8_t *& data, size_t& size, tts_synth_status status)
 {
-	//fprintf(stderr, "TTS callback, rate: %d, data size: %d, status: %i\n", sample_rate, size, status);
+	fprintf(stderr, "TTS callback, rate: %d, data size: %d, status: %i\n", sample_rate, size, status);
 
 	if (status == TTS_SYNTH_DONE)
 	{
@@ -108,7 +108,7 @@ int main(int argc, char *argv[])
 	}
 
 	// Force English for now
-	result = ttsEngine->setLanguage("eng", "GBR", "");
+	result = ttsEngine->setLanguage("deu", "DEU", "");
 
 	if (result != TTS_SUCCESS)
 	{
